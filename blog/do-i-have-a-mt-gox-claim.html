@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do I Have a Mt. Gox Claim? How to Check | GoxClaim</title>
+    <meta name="description" content="Find out if you have a Mt. Gox claim. The trustee automatically filed claims for many users. Learn how to check your status, what your claim may be worth, and what to do next.">
+    <link rel="canonical" href="https://goxclaim.com/blog/do-i-have-a-mt-gox-claim">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Do I Have a Mt. Gox Claim? How to Check">
+    <meta property="og:description" content="The Mt. Gox trustee automatically filed claims for many users. Here's how to find out if you have one and what it could be worth.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://goxclaim.com/blog/do-i-have-a-mt-gox-claim">
+    <meta property="og:site_name" content="GoxClaim">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Do I Have a Mt. Gox Claim? How to Check">
+    <meta name="twitter:description" content="The Mt. Gox trustee automatically filed claims for many users. Here's how to find out if you have one and what it could be worth.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            color: #2a2a2a;
+            background: #f5f3ef;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; }
+
+        .container { max-width: 680px; margin: 0 auto; padding: 0 28px; }
+
+        /* Back link */
+        .back-link {
+            display: inline-block;
+            padding: 24px 0 0;
+            font-size: 14px;
+            color: #999;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: #2a2a2a; }
+
+        .back-link span { margin-right: 6px; }
+
+        /* Article header */
+        .article-header {
+            padding: 48px 0 40px;
+        }
+
+        .article-header h1 {
+            font-size: clamp(30px, 5vw, 42px);
+            line-height: 1.2;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .article-meta {
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* Article body */
+        .article-body {
+            padding-bottom: 60px;
+        }
+
+        .article-body h2 {
+            font-size: clamp(22px, 3.5vw, 28px);
+            color: #1a1a1a;
+            margin: 40px 0 16px;
+        }
+
+        .article-body h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 32px 0 12px;
+        }
+
+        .article-body p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 16px;
+            max-width: 100%;
+        }
+
+        .article-body ul, .article-body ol {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        .article-body li {
+            margin-bottom: 8px;
+        }
+
+        .article-body strong {
+            color: #2a2a2a;
+        }
+
+        /* Callout box */
+        .callout {
+            background: #eae8e3;
+            border-left: 3px solid #1a1a1a;
+            padding: 20px 24px;
+            margin: 28px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .callout p {
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+
+        /* Example table */
+        .example-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0 28px;
+            font-size: 15px;
+        }
+
+        .example-table th {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 2px solid #ddd8d0;
+            color: #1a1a1a;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .example-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #ddd8d0;
+            color: #555;
+        }
+
+        .example-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* CTA box */
+        .cta-box {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 32px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .cta-box h2 {
+            color: #fff;
+            margin: 0 0 12px;
+            font-size: 24px;
+        }
+
+        .cta-box p {
+            color: #bbb;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .cta-box a {
+            display: inline-block;
+            background: #fff;
+            color: #1a1a1a;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.2s;
+        }
+
+        .cta-box a:hover { background: #eae8e3; }
+
+        /* Scenario cards */
+        .scenario {
+            padding: 24px 0;
+            border-bottom: 1px solid #ddd8d0;
+        }
+
+        .scenario:last-of-type { border-bottom: none; }
+
+        .scenario h3 {
+            margin-top: 0;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            font-size: 13px;
+            color: #999;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid #ddd8d0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0 60px;
+            text-align: center;
+            font-size: 13px;
+            color: #aaa;
+            border-top: 1px solid #ddd8d0;
+        }
+
+        footer a { color: #aaa; }
+
+        @media (max-width: 600px) {
+            .article-header { padding: 36px 0 28px; }
+            .example-table { font-size: 14px; }
+            .example-table th, .example-table td { padding: 10px 12px; }
+            .cta-box { padding: 24px 20px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Do I Have a Mt. Gox Claim? How to Check",
+        "description": "Find out if you have a Mt. Gox claim. The trustee automatically filed claims for many users. Learn how to check your status, what your claim may be worth, and what to do next.",
+        "datePublished": "2026-03-26",
+        "dateModified": "2026-03-26",
+        "author": {
+            "@type": "Organization",
+            "name": "GoxClaim",
+            "url": "https://goxclaim.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "GoxClaim",
+            "url": "https://goxclaim.com"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://goxclaim.com/blog/do-i-have-a-mt-gox-claim"
+        }
+    }
+    </script>
+</head>
+<body>
+
+<div class="container">
+
+    <a href="https://goxclaim.com/" class="back-link"><span>&larr;</span> Back to goxclaim.com</a>
+
+    <div class="article-header">
+        <h1>Do I Have a Mt. Gox Claim? How&nbsp;to&nbsp;Check</h1>
+        <div class="article-meta">Updated March 2026 &middot; 7 min read</div>
+    </div>
+
+    <div class="article-body">
+
+        <p>When Mt. Gox collapsed in February 2014, roughly 24,000 creditors had funds stuck on the exchange. More than a decade later, the rehabilitation process is still ongoing &mdash; and many people don't realize they may have a valid claim worth real money.</p>
+
+        <p>If you ever had an account on Mt. Gox, there is a reasonable chance a claim already exists in your name, even if you never filed anything. Here's how to find out.</p>
+
+        <h2>The trustee filed claims automatically</h2>
+
+        <p>After Mt. Gox filed for civil rehabilitation in Japan, the court-appointed trustee (Nobuaki Kobayashi) took an unusual step: he automatically filed claims on behalf of users who had balances at the time of bankruptcy but hadn't submitted a claim themselves.</p>
+
+        <p>These are known as <strong>automatic claims</strong>, and they're identified by creditor numbers starting with <strong>Z1-</strong> or <strong>Z2-</strong> followed by a number. If the trustee's records showed you had Bitcoin or fiat currency in your Mt. Gox account, a claim was likely created for you &mdash; regardless of whether you ever logged into the claims portal or filled out a form.</p>
+
+        <p>This means there are people around the world who have approved claims worth tens or hundreds of thousands of dollars, sitting unclaimed because the creditor doesn't know the claim exists.</p>
+
+        <div class="callout">
+            <p><strong>Key point:</strong> You do not need to have filed a claim yourself. The trustee created Z1-/Z2- claims automatically based on Mt. Gox's internal account records. If you had a balance, you likely have a claim.</p>
+        </div>
+
+        <h2>How to check if you have a claim</h2>
+
+        <p>There are a few ways to determine whether a claim exists in your name.</p>
+
+        <h3>1. Check your email</h3>
+
+        <p>Search your email (including the email address you used to register on Mt. Gox) for messages from the trustee or the claims system. Look for:</p>
+
+        <ul>
+            <li>Emails from <strong>support@claims.mtgox.com</strong> or the trustee's office</li>
+            <li>Your <strong>creditor number</strong> (format: Z1-XXXXX, Z2-XXXXX, or just a plain number)</li>
+            <li>References to "Mt. Gox rehabilitation" or "civil rehabilitation proceedings"</li>
+        </ul>
+
+        <p>Even emails from 2014&ndash;2018 may contain your creditor number. It's worth digging through old accounts.</p>
+
+        <h3>2. Try logging into the claims portal</h3>
+
+        <p>The Mt. Gox claims portal at <strong>claims.mtgox.com</strong> is where creditors manage their claims. If you still have access to the email you used on Mt. Gox, you may be able to log in or reset your password. Once inside, the portal will show your creditor number, claim status, and approved amount.</p>
+
+        <p>Be aware: the portal is not user-friendly. Password resets sometimes fail, and if your email address has changed since 2014, you may not be able to access it without going through a formal process with the trustee.</p>
+
+        <h3>3. Check with a recovery service</h3>
+
+        <p>If you can't find any emails and can't access the portal, you can still check. Services like ours can verify whether a claim exists using the information you have &mdash; an old email address, a Mt. Gox username, or even just approximate details about when you used the exchange.</p>
+
+        <h2>Common scenarios</h2>
+
+        <div class="scenario">
+            <h3>"I had an account but never filed a claim"</h3>
+            <p>This is the most common situation. If you had Bitcoin or fiat currency in your Mt. Gox account when it shut down, the trustee almost certainly created an automatic claim for you (a Z1- or Z2- number). The claim may already be approved and waiting for you to complete the final steps: identity verification, bank registration, and repayment method selection. You don't need to file anything new &mdash; you need to activate and complete the claim that already exists.</p>
+        </div>
+
+        <div class="scenario">
+            <h3>"I don't remember my creditor number"</h3>
+            <p>Your creditor number was assigned by the trustee and sent to the email address associated with your Mt. Gox account. If you can't find it, try searching old email accounts for "mtgox" or "creditor." If your original email is no longer accessible, the trustee can still locate your claim using other identifying information, but this requires going through their (slow) support process. A recovery service can help expedite this.</p>
+        </div>
+
+        <div class="scenario">
+            <h3>"I changed my email address since 2014"</h3>
+            <p>This is one of the biggest practical obstacles. The claims portal is tied to your original email. If that address no longer works, you can't receive password resets or notifications. Updating your email with the trustee requires submitting an address change request, which involves identity verification and sometimes notarized documents. The process works, but it takes time &mdash; often weeks &mdash; and the instructions aren't always clear. This is an area where many creditors get stuck.</p>
+        </div>
+
+        <div class="scenario">
+            <h3>"I only had a small amount on Mt. Gox"</h3>
+            <p>Don't dismiss a claim because your original balance was small. Bitcoin was trading around $450 when Mt. Gox collapsed. The trustee held onto the recovered Bitcoin rather than selling it, which means distributions are made in BTC at current market value. Even a fraction of a Bitcoin from 2014 can be worth a meaningful amount today. See the section below for specific examples.</p>
+        </div>
+
+        <h2>What is a Mt. Gox claim worth?</h2>
+
+        <p>Under the approved rehabilitation plan, the trustee is distributing approximately <strong>21% of each creditor's approved Bitcoin claim</strong>. This percentage comes from the total Bitcoin recovered (roughly 142,000 BTC from the original ~850,000 BTC lost), minus legal costs and other deductions.</p>
+
+        <p>The distribution is made in Bitcoin (or the cash equivalent, depending on the repayment method chosen). At current market prices, this means:</p>
+
+        <table class="example-table">
+            <thead>
+                <tr>
+                    <th>Original balance</th>
+                    <th>~21% distribution</th>
+                    <th>Approx. value (at $87,000/BTC)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 BTC</td>
+                    <td>~0.21 BTC</td>
+                    <td>~$18,300</td>
+                </tr>
+                <tr>
+                    <td>5 BTC</td>
+                    <td>~1.05 BTC</td>
+                    <td>~$91,400</td>
+                </tr>
+                <tr>
+                    <td>10 BTC</td>
+                    <td>~2.1 BTC</td>
+                    <td>~$182,700</td>
+                </tr>
+                <tr>
+                    <td>50 BTC</td>
+                    <td>~10.5 BTC</td>
+                    <td>~$913,500</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>These are approximate figures. The exact distribution rate depends on how many creditors complete the process and the final accounting by the trustee. Creditors who elected "early lump-sum payment" receive a slightly lower percentage in exchange for faster payout. Those who chose "final payment" may receive more, but the timeline is uncertain.</p>
+
+        <div class="callout">
+            <p><strong>Important:</strong> These figures are estimates based on publicly available information about the rehabilitation plan. Actual amounts may vary. Bitcoin prices fluctuate, and the final distribution percentage could change based on the trustee's final reconciliation. We are not financial advisors.</p>
+        </div>
+
+        <h2>The deadline: October 31, 2026</h2>
+
+        <p>The Tokyo District Court has set <strong>October 31, 2026</strong> as the final repayment deadline. This is the third extension &mdash; and widely expected to be the last. After this date, unclaimed creditors' rights are permanently discharged under the rehabilitation plan, and remaining funds are redistributed to creditors who completed the process.</p>
+
+        <p>To receive your distribution before the deadline, you need to have completed:</p>
+
+        <ol>
+            <li><strong>Identity verification</strong> &mdash; confirming your identity with the trustee</li>
+            <li><strong>Bank registration</strong> &mdash; providing a bank account or crypto exchange for receiving payment</li>
+            <li><strong>Repayment method selection</strong> &mdash; choosing early lump-sum or final payment</li>
+        </ol>
+
+        <p>Each step involves the trustee's review process, which is not fast. Starting now is not early &mdash; it's the minimum needed to have a realistic chance of completing before the deadline.</p>
+
+        <h2>What to do next</h2>
+
+        <p>If you think you might have a claim, here's the practical path forward:</p>
+
+        <ol>
+            <li><strong>Gather what you have.</strong> Old email addresses, usernames, any correspondence from Mt. Gox or the trustee. Even partial information helps.</li>
+            <li><strong>Try the claims portal.</strong> Go to claims.mtgox.com and attempt to log in. If it works, check your claim status and what steps remain.</li>
+            <li><strong>If you're stuck, get help.</strong> Address changes, portal access issues, and confusing documentation are the norm, not the exception. Don't let a technical obstacle cost you a legitimate claim.</li>
+        </ol>
+
+        <p>We offer a free assessment for anyone who thinks they may have a Mt. Gox claim. Send us whatever information you have &mdash; even just an old email address &mdash; and we'll check if a claim exists and estimate its value. There's no cost and no obligation.</p>
+
+        <div class="cta-box">
+            <h2>Not sure if you have a claim?</h2>
+            <p>Send us your details and we'll check for free. No cost, no obligation.</p>
+            <a href="https://goxclaim.com/#form-container">Get free assessment</a>
+        </div>
+
+        <p class="disclaimer">This article is for informational purposes only and does not constitute legal or financial advice. GoxClaim is not a law firm. All figures are estimates based on publicly available information about the Mt. Gox rehabilitation proceedings. Actual distribution amounts depend on the trustee's final accounting and prevailing market prices. Past extensions of the deadline do not guarantee future extensions.</p>
+
+    </div>
+
+</div>
+
+<footer>
+    <div class="container">Mt.&nbsp;Gox Recovery &middot; Palma, Spain &middot; <a href="mailto:info@goxclaim.com">info@goxclaim.com</a></div>
+</footer>
+
+</body>
+</html>

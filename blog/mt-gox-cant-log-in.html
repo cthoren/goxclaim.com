@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mt. Gox Can't Log In? Here's What to Do | GoxClaim</title>
+    <meta name="description" content="Can't log in to the Mt. Gox claims portal? Common fixes for forgotten passwords, lost 2FA, changed emails, and the 'obtaining user information failed' error.">
+    <link rel="canonical" href="https://goxclaim.com/blog/mt-gox-cant-log-in">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mt. Gox Can't Log In? Here's What to Do">
+    <meta property="og:description" content="Common fixes for Mt. Gox login problems — forgotten passwords, lost 2FA, changed emails, and error messages that make no sense.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://goxclaim.com/blog/mt-gox-cant-log-in">
+    <meta property="og:site_name" content="GoxClaim">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Mt. Gox Can't Log In? Here's What to Do">
+    <meta name="twitter:description" content="Common fixes for Mt. Gox login problems — forgotten passwords, lost 2FA, changed emails, and error messages that make no sense.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            color: #2a2a2a;
+            background: #f5f3ef;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; }
+
+        .container { max-width: 680px; margin: 0 auto; padding: 0 28px; }
+
+        /* Back link */
+        .back-link {
+            display: block;
+            padding: 20px 0;
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover { color: #2a2a2a; }
+
+        /* Article header */
+        .article-header {
+            padding: 40px 0 32px;
+        }
+
+        .article-header h1 {
+            font-size: clamp(30px, 5.5vw, 44px);
+            line-height: 1.15;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .article-meta {
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* Article body */
+        .article-body {
+            padding-bottom: 48px;
+        }
+
+        .article-body p {
+            font-size: 16.5px;
+            color: #444;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+
+        .article-body h2 {
+            font-size: clamp(22px, 3.5vw, 30px);
+            color: #1a1a1a;
+            margin-top: 44px;
+            margin-bottom: 16px;
+        }
+
+        .article-body h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-top: 32px;
+            margin-bottom: 10px;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 20px;
+            padding-left: 24px;
+        }
+
+        .article-body li {
+            font-size: 16.5px;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        .article-body strong { color: #2a2a2a; }
+
+        .article-body code {
+            background: #eae8e3;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .article-body a {
+            color: #2a7d5f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .article-body a:hover { color: #1a5c42; }
+
+        /* Callout box */
+        .callout {
+            background: #eae8e3;
+            border-left: 3px solid #1a1a1a;
+            padding: 20px 24px;
+            margin: 28px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .callout p {
+            margin-bottom: 0;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .callout p + p { margin-top: 12px; }
+
+        /* CTA block */
+        .cta-block {
+            background: #fff;
+            border: 1px solid #ddd8d0;
+            border-radius: 12px;
+            padding: 32px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .cta-block h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .cta-block p {
+            font-size: 15px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .cta-block a.btn {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.2s;
+        }
+
+        .cta-block a.btn:hover { background: #333; color: #fff; }
+
+        /* Footer */
+        footer {
+            padding: 40px 0 48px;
+            text-align: center;
+            font-size: 13px;
+            color: #aaa;
+            border-top: 1px solid #ddd8d0;
+        }
+
+        footer a { color: #aaa; }
+
+        @media (max-width: 600px) {
+            .article-header { padding: 28px 0 24px; }
+            .callout { padding: 16px 18px; }
+            .cta-block { padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <a href="https://goxclaim.com/" class="back-link">&larr; Back to goxclaim.com</a>
+
+    <article>
+        <div class="article-header">
+            <h1>Mt.&nbsp;Gox Can't Log In? Here's What to Do</h1>
+            <div class="article-meta">Updated March 2026 &middot; 6 min read</div>
+        </div>
+
+        <div class="article-body">
+
+            <p>You know you had Bitcoin on Mt. Gox. You know there's a claims process. You've found the portal, typed in your details, and... nothing. Wrong password. Error message. A blank screen. No response from support.</p>
+
+            <p>If you're dealing with a Mt. Gox login problem right now, you're not alone. This is one of the most common issues creditors face, and it's been blocking people from collecting money that's rightfully theirs for years.</p>
+
+            <p>This guide covers the most common login issues on the Mt. Gox claims portal, what you can try yourself, and when it's time to get help.</p>
+
+            <h2>What is the Mt. Gox claims portal?</h2>
+
+            <p>The official claims portal at <strong>claims.mtgox.com</strong> is the system run by the Mt. Gox bankruptcy trustee, Nobuaki Kobayashi. It's where creditors manage their claims, register bank details, select a repayment method, and eventually receive their payout.</p>
+
+            <p>The portal was not built for a good user experience. It was built for a legal process. The interface is clunky, error messages are vague, and support response times are measured in weeks rather than hours. Every step matters, though, because if your account isn't fully set up before the <strong>October 31, 2026 deadline</strong>, your claim rights may be permanently discharged.</p>
+
+            <p>That's why a login problem isn't just an inconvenience. It's a barrier between you and potentially life-changing money.</p>
+
+            <h2>The most common Mt. Gox login problems</h2>
+
+            <h3>1. Forgotten password</h3>
+
+            <p>The most straightforward issue, but not always the easiest to fix. The portal has a password reset function, but the reset email goes to whatever email address is on file. If you created your Mt. Gox account in 2011 or 2012, that email address might belong to a provider that no longer exists, or it might be an old address you haven't used in a decade.</p>
+
+            <p>If you still have access to the original email, the password reset usually works. If you don't, you're stuck — and the portal won't tell you which email address it's sending the reset to, for security reasons.</p>
+
+            <h3>2. Lost two-factor authentication (2FA)</h3>
+
+            <p>Some creditors set up 2FA on their claims account, often using Google Authenticator or a similar app. If you've changed phones since then, or if the app was wiped, that 2FA code is gone. The portal has no self-service way to remove or reset 2FA. You need to contact the trustee's support team and go through an identity verification process — which can take weeks.</p>
+
+            <h3>3. Email address no longer accessible</h3>
+
+            <p>This is the big one. The email address tied to your Mt. Gox account is the key to everything: password resets, account verification, communication from the trustee. If that email address is dead — old ISP, deleted Gmail, defunct company domain — you can't receive reset emails and you can't prove ownership through the normal channels.</p>
+
+            <p>Changing the email on your claims account requires submitting identity documents and going through a manual review process with the trustee. It's doable, but it's slow and the requirements aren't clearly documented.</p>
+
+            <h3>4. "Obtaining user information failed"</h3>
+
+            <p>This is the error message that causes the most confusion. You enter your credentials, the page loads, and you get: <code>Obtaining user information failed</code>. No further explanation.</p>
+
+            <p>This error can mean several things. Your account may be locked after too many failed attempts. There may be a server-side issue with the portal (it happens more often than you'd expect). Your claim status may have changed in a way that affects login access. Or there may be a data mismatch between your credentials and what's on file.</p>
+
+            <p>The frustrating part is that the error message is the same regardless of the cause. There's no way to tell from the outside what's actually wrong.</p>
+
+            <h2>What you can try yourself</h2>
+
+            <p>Before reaching out for help, there are a few things worth trying:</p>
+
+            <ul>
+                <li><strong>Check old email accounts.</strong> Search your memory and your email providers. Check Gmail, Yahoo, Hotmail, and any other accounts you had in 2011-2014. Search for emails from "mtgox" or "claims.mtgox.com" — you might find the original registration email or past correspondence from the trustee.</li>
+                <li><strong>Try the password reset.</strong> Go to claims.mtgox.com and use the "forgot password" link. Even if you're not sure which email is on file, it costs nothing to try. If the email arrives, you're in.</li>
+                <li><strong>Clear your browser cache.</strong> The claims portal sometimes behaves differently in different browsers. Try a fresh incognito/private window. Some creditors have reported that cached cookies cause issues.</li>
+                <li><strong>Wait and retry.</strong> If you're getting the "obtaining user information failed" error, wait 24 hours and try again. Account lockouts are temporary, and server-side issues usually resolve within a day.</li>
+                <li><strong>Check your creditor number.</strong> If you have any old emails or documents from Mt. Gox or the trustee, look for your creditor number (format: Z1-XXXXX or Z2-XXXXX). Having this makes every support interaction faster.</li>
+            </ul>
+
+            <div class="callout">
+                <p><strong>Important:</strong> Do not create a new account on claims.mtgox.com. Your claim is tied to your existing account. Creating a new account won't give you access to your claim and may complicate things further.</p>
+            </div>
+
+            <h2>When to get help</h2>
+
+            <p>The self-service options on the claims portal are limited. If you've tried the basics and you're still locked out, here's when it makes sense to get outside help:</p>
+
+            <ul>
+                <li><strong>Support isn't responding.</strong> The trustee's support team handles thousands of requests. Response times of 2-4 weeks are normal. If you've been waiting longer than that with no reply, your request may have fallen through the cracks.</li>
+                <li><strong>You need to change your registered email or address.</strong> This requires identity documents and a specific process that isn't well-documented. Getting it wrong means starting over.</li>
+                <li><strong>The deadline is getting close.</strong> The final deadline is October 31, 2026. If it's mid-2026 and you still can't log in, the margin for error is gone. Every week of delay reduces your chances of completing the process in time.</li>
+                <li><strong>You're not sure what steps are left.</strong> Even after logging in, you still need to complete bank registration, identity verification, and repayment method selection. If you're unclear on what's done and what isn't, it's easy to miss a step that blocks your payout.</li>
+            </ul>
+
+            <h2>Why login issues block your repayment</h2>
+
+            <p>This isn't like being locked out of a social media account. If you can't log in, you can't:</p>
+
+            <ul>
+                <li>Register your bank account for the payout</li>
+                <li>Select your repayment method (early lump sum vs. final payment)</li>
+                <li>Update your personal information if it's changed since 2014</li>
+                <li>Verify your identity, which the trustee requires before sending funds</li>
+            </ul>
+
+            <p>Every one of these steps is mandatory. If any of them are incomplete when the deadline arrives, the trustee is not obligated to pay you. The Tokyo District Court has extended the deadline three times already. A fourth extension is not expected.</p>
+
+            <p>The amounts at stake are real. Bitcoin was around $450 when Mt. Gox collapsed. The trustee held onto the Bitcoin rather than selling. Even a modest balance from 2014 could be worth tens or hundreds of thousands of dollars today.</p>
+
+            <h2>We've dealt with this before</h2>
+
+            <p>We're a small European team that went through the Mt. Gox claims process ourselves. We've handled login lockouts, email changes, address updates, and the "obtaining user information failed" error for other creditors. We know what works because we've navigated it firsthand.</p>
+
+            <p>We're not a law firm and we don't provide legal advice. We charge 15% of what you receive, only after you're paid. No upfront cost, no retainer, no hourly billing. If we can't resolve it, you owe nothing.</p>
+
+            <div class="cta-block">
+                <h3>Not sure where to start?</h3>
+                <p>Send us your old email address or whatever you remember. We'll check if you have a valid claim and tell you what's blocking it. Takes five minutes, costs nothing.</p>
+                <a href="https://goxclaim.com/#form-container" class="btn">Get free assessment</a>
+            </div>
+
+        </div>
+    </article>
+
+</div>
+
+<footer>
+    <div class="container">Mt.&nbsp;Gox Recovery &middot; Palma, Spain &middot; <a href="mailto:info@goxclaim.com">info@goxclaim.com</a></div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Mt. Gox Can't Log In? Here's What to Do",
+  "description": "Common fixes for Mt. Gox login problems — forgotten passwords, lost 2FA, changed emails, and the 'obtaining user information failed' error.",
+  "datePublished": "2026-03-26",
+  "dateModified": "2026-03-26",
+  "author": {
+    "@type": "Organization",
+    "name": "GoxClaim",
+    "url": "https://goxclaim.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GoxClaim",
+    "url": "https://goxclaim.com"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://goxclaim.com/blog/mt-gox-cant-log-in"
+  }
+}
+</script>
+</body>
+</html>
