@@ -3,377 +3,455 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mt. Gox Claim Recovery — Get Your Money Out</title>
-    <meta name="description" content="Stuck with your Mt. Gox claim? We've helped creditors recover over $300,000. 15% success fee only. No recovery, no fee. Deadline: October 31, 2026.">
-    <meta property="og:title" content="Mt. Gox Claim Recovery">
-    <meta property="og:description" content="$4 billion in Bitcoin is still waiting. We help creditors get paid. 15% fee. No recovery, no cost.">
+    <title>Mt. Gox Recovery — Claim Assistance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        :root {
-            --bg: #fafafa;
-            --bg-card: #ffffff;
-            --bg-dark: #111;
-            --text: #1a1a1a;
-            --text-muted: #555;
-            --text-dim: #888;
-            --accent: #b8860b;
-            --accent-hover: #996f09;
-            --border: #e5e5e5;
-            --green: #16a34a;
-            --red: #dc2626;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Helvetica, Arial, sans-serif;
-            color: var(--text);
-            background: var(--bg);
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            color: #2a2a2a;
+            background: #f5f3ef;
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 24px;
+        h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; }
+
+        .container { max-width: 640px; margin: 0 auto; padding: 0 28px; }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #f5f3ef;
+            border-top: 1px solid #ddd8d0;
+            padding: 16px 28px;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
         }
+
+        .sticky-cta a {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.2s;
+        }
+
+        .sticky-cta a:hover { background: #333; }
+
+        /* Deadline */
+        .deadline-top {
+            background: #1a1a1a;
+            color: #ccc;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .deadline-top strong { color: #f87171; }
 
         /* Hero */
         .hero {
-            padding: 100px 0 60px;
-            text-align: center;
+            padding: 72px 0 48px;
         }
 
         .hero h1 {
-            font-size: clamp(28px, 5vw, 42px);
-            font-weight: 700;
-            line-height: 1.2;
+            font-size: clamp(34px, 6vw, 50px);
+            line-height: 1.12;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #666;
             margin-bottom: 20px;
-            letter-spacing: -0.5px;
-            color: var(--text);
+            max-width: 480px;
         }
 
-        .hero .subtitle {
-            font-size: 18px;
-            color: var(--text-muted);
-            max-width: 560px;
-            margin: 0 auto 40px;
-            line-height: 1.6;
-        }
-
-        .hero .track-record {
-            font-size: 14px;
-            color: var(--text-dim);
+        /* Situations */
+        .situations {
+            list-style: none;
             margin-bottom: 40px;
-            letter-spacing: 0.5px;
         }
 
-        .hero .track-record span {
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        /* Deadline banner */
-        .deadline-banner {
-            background: var(--bg-dark);
-            color: #fff;
-            text-align: center;
-            padding: 20px 24px;
-        }
-
-        .deadline-banner .date {
+        .situations li {
             font-size: 15px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            color: #666;
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
         }
 
-        .deadline-banner .date strong {
-            color: #f87171;
+        .situations li::before {
+            content: '\2014';
+            color: #bbb;
+            position: absolute;
+            left: 0;
         }
 
-        .deadline-banner .note {
+        /* Stats row */
+        .stats {
+            display: flex;
+            gap: 48px;
+            padding: 36px 0;
+            border-top: 1px solid #ddd8d0;
+            border-bottom: 1px solid #ddd8d0;
+            margin-bottom: 48px;
+        }
+
+        .stat .number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 36px;
+        }
+
+        .stat .number.green { color: #2a7d5f; }
+
+        .stat .label {
             font-size: 13px;
             color: #999;
             margin-top: 2px;
         }
 
-        /* CTA Form */
-        .cta-form {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+        /* Testimonial */
+        .testimonial {
+            background: #fff;
             border-radius: 12px;
-            padding: 32px;
-            max-width: 480px;
-            margin: 0 auto;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            padding: 28px 32px;
+            margin-bottom: 48px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            position: relative;
         }
 
-        .cta-form h3 {
-            font-size: 18px;
-            font-weight: 600;
+        .testimonial::before {
+            content: '\201C';
+            font-family: 'DM Serif Display', serif;
+            font-size: 48px;
+            color: #ddd8d0;
+            position: absolute;
+            top: 12px;
+            left: 20px;
+            line-height: 1;
+        }
+
+        .testimonial p {
+            font-size: 16px;
+            color: #444;
+            font-style: italic;
+            padding-left: 8px;
+        }
+
+        .testimonial .attribution {
+            font-size: 13px;
+            color: #999;
+            margin-top: 12px;
+            font-style: normal;
+            padding-left: 8px;
+        }
+
+        /* Who we are (trust block) */
+        .trust-block {
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid #ddd8d0;
+        }
+
+        .trust-block h2 {
+            font-size: 24px;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .trust-block p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 12px;
+            max-width: 560px;
+        }
+
+        /* Risk-free block */
+        .risk-free {
+            background: #fff;
+            border: 2px solid #2a7d5f;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 48px;
+        }
+
+        .risk-free h3 {
+            font-size: 20px;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .risk-free ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .risk-free li {
+            font-size: 15px;
+            color: #444;
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .risk-free li::before {
+            content: '\2713';
+            color: #2a7d5f;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Form */
+        .form-block {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 72px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+
+        .form-block h2 {
+            font-size: 24px;
             margin-bottom: 4px;
         }
 
-        .cta-form .form-sub {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .cta-form input,
-        .cta-form textarea {
-            width: 100%;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 12px 14px;
-            color: var(--text);
+        .form-block .sub {
             font-size: 15px;
-            font-family: inherit;
-            margin-bottom: 12px;
-            transition: border-color 0.2s;
+            color: #888;
+            margin-bottom: 28px;
         }
 
-        .cta-form input:focus,
-        .cta-form textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .cta-form input::placeholder,
-        .cta-form textarea::placeholder {
-            color: #aaa;
-        }
-
-        .cta-form textarea {
-            height: 80px;
-            resize: vertical;
-        }
-
-        .cta-form button {
+        .form-block input,
+        .form-block textarea {
             width: 100%;
-            background: var(--bg-dark);
+            background: #f5f3ef;
+            border: 1px solid #e0ddd7;
+            border-radius: 8px;
+            padding: 14px 16px;
+            color: #2a2a2a;
+            font-size: 15px;
+            font-family: 'DM Sans', sans-serif;
+            margin-bottom: 12px;
+        }
+
+        .form-block input:focus,
+        .form-block textarea:focus {
+            outline: none;
+            border-color: #2a7d5f;
+        }
+
+        .form-block input::placeholder,
+        .form-block textarea::placeholder { color: #aaa; }
+
+        .form-block textarea { height: 80px; resize: vertical; }
+
+        .form-block button {
+            width: 100%;
+            background: #1a1a1a;
             color: #fff;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             padding: 14px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
             cursor: pointer;
             transition: background 0.2s;
         }
 
-        .cta-form button:hover {
-            background: #333;
-        }
+        .form-block button:hover { background: #333; }
 
-        .cta-form .form-fine {
-            font-size: 13px;
-            color: var(--text-dim);
-            margin-top: 12px;
+        .form-block .fine {
+            font-size: 12px;
+            color: #aaa;
             text-align: center;
-        }
-
-        .form-success {
-            display: none;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .form-success h3 {
-            color: var(--green);
-            margin-bottom: 8px;
-        }
-
-        .form-success p {
-            color: var(--text-muted);
+            margin-top: 14px;
         }
 
         /* Sections */
         section {
-            padding: 80px 0;
-            border-top: 1px solid var(--border);
+            padding: 60px 0;
+            border-top: 1px solid #ddd8d0;
+        }
+
+        .section-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #bbb;
+            font-weight: 600;
+            margin-bottom: 16px;
         }
 
         section h2 {
-            font-size: clamp(22px, 4vw, 30px);
-            font-weight: 700;
-            margin-bottom: 24px;
-            letter-spacing: -0.3px;
+            font-size: clamp(26px, 4vw, 36px);
+            color: #1a1a1a;
+            margin-bottom: 20px;
         }
 
         section p {
-            color: var(--text-muted);
+            color: #666;
             font-size: 16px;
             margin-bottom: 16px;
+            max-width: 560px;
         }
 
-        /* Problem */
-        .problem-list {
+        /* Problems */
+        .problems li {
             list-style: none;
-            margin-top: 24px;
-        }
-
-        .problem-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-            color: var(--text-muted);
+            padding: 16px 0;
+            border-bottom: 1px solid #ddd8d0;
             font-size: 15px;
+            color: #666;
+            padding-left: 24px;
+            position: relative;
         }
 
-        .problem-list li span {
-            color: var(--red);
-            margin-right: 8px;
-            font-weight: 600;
+        .problems li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 24px;
+            width: 8px;
+            height: 8px;
+            background: #e0675b;
+            border-radius: 50%;
         }
 
         /* Steps */
-        .steps {
-            display: grid;
-            gap: 20px;
-            margin-top: 32px;
+        .steps { margin-top: 32px; }
+
+        .step-card {
+            padding: 28px 0;
+            border-bottom: 1px solid #ddd8d0;
         }
 
-        .step {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 28px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-        }
-
-        .step-number {
-            display: inline-block;
-            width: 28px;
-            height: 28px;
-            background: var(--bg-dark);
-            color: #fff;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 28px;
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .step h3 {
-            font-size: 17px;
-            font-weight: 600;
+        .step-card .step-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             margin-bottom: 8px;
         }
 
-        .step p {
-            font-size: 15px;
-            color: var(--text-muted);
-            margin-bottom: 0;
+        .step-card .step-n {
+            width: 24px;
+            height: 24px;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
 
-        /* Pricing comparison */
-        .pricing-grid {
+        .step-card h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .step-card p {
+            font-size: 15px;
+            color: #777;
+            margin: 0;
+            padding-left: 36px;
+        }
+
+        /* Pricing */
+        .pricing-compare {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
-            margin-top: 32px;
-        }
-
-        .pricing-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 28px;
-            text-align: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-        }
-
-        .pricing-card.highlight {
-            border-color: var(--bg-dark);
-            border-width: 2px;
-        }
-
-        .pricing-card .label {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-dim);
-            margin-bottom: 12px;
-        }
-
-        .pricing-card .fee {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 4px;
-            color: var(--text);
-        }
-
-        .pricing-card.highlight .fee {
-            color: var(--green);
-        }
-
-        .pricing-card .fee-note {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .pricing-card .example {
-            font-size: 14px;
-            color: var(--text-dim);
-            padding-top: 16px;
-            border-top: 1px solid var(--border);
-        }
-
-        .pricing-card .example strong {
-            color: var(--text);
-            display: block;
-            font-size: 20px;
-            margin-top: 4px;
-        }
-
-        .pricing-card.highlight .example strong {
-            color: var(--green);
-        }
-
-        /* Who */
-        .who p {
-            font-size: 16px;
-        }
-
-        /* Deadline section */
-        .deadline-section {
-            text-align: center;
-        }
-
-        .deadline-box {
-            background: var(--bg-card);
-            border: 2px solid var(--red);
-            border-radius: 10px;
-            padding: 32px;
-            text-align: center;
             margin-top: 24px;
         }
 
-        .deadline-box .date {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--red);
-            margin-bottom: 8px;
+        .price-box {
+            border: 1px solid #ddd8d0;
+            border-radius: 12px;
+            padding: 28px;
+            text-align: center;
+            background: #eae8e3;
         }
 
-        .deadline-box p {
-            color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 0;
+        .price-box.us {
+            border-color: #1a1a1a;
+            border-width: 2px;
+            background: #fff;
         }
+
+        .price-box .tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .price-box .amount {
+            font-family: 'DM Serif Display', serif;
+            font-size: 40px;
+        }
+
+        .price-box.us .amount { color: #2a7d5f; }
+        .price-box.them .amount { color: #bbb; }
+
+        .price-box .note {
+            font-size: 13px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        .price-box .keep {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #ddd8d0;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .price-box .keep strong {
+            display: block;
+            font-size: 20px;
+            color: #1a1a1a;
+            margin-top: 4px;
+        }
+
+        .price-box.us .keep strong { color: #2a7d5f; }
 
         /* FAQ */
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
+        details {
+            border-bottom: 1px solid #ddd8d0;
+            padding: 18px 0;
         }
 
-        .faq-item summary {
+        summary {
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 500;
+            color: #1a1a1a;
             cursor: pointer;
             list-style: none;
             display: flex;
@@ -381,280 +459,178 @@
             align-items: center;
         }
 
-        .faq-item summary::-webkit-details-marker { display: none; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; color: #aaa; font-size: 20px; font-weight: 400; }
+        details[open] summary::after { content: '-'; }
 
-        .faq-item summary::after {
-            content: '+';
-            font-size: 20px;
-            color: var(--text-dim);
-        }
-
-        .faq-item[open] summary::after {
-            content: '-';
-        }
-
-        .faq-item .faq-answer {
-            padding-top: 12px;
+        .faq-a {
+            padding-top: 10px;
             font-size: 15px;
-            color: var(--text-muted);
-        }
-
-        /* Bottom CTA */
-        .bottom-cta {
-            text-align: center;
-            padding: 80px 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .bottom-cta h2 {
-            margin-bottom: 16px;
-        }
-
-        .bottom-cta p {
-            color: var(--text-muted);
-            margin-bottom: 32px;
-        }
-
-        .bottom-cta a.btn {
-            display: inline-block;
-            background: var(--bg-dark);
-            color: #fff;
-            padding: 14px 32px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: background 0.2s;
-        }
-
-        .bottom-cta a.btn:hover {
-            background: #333;
+            color: #777;
         }
 
         /* Footer */
         footer {
-            border-top: 1px solid var(--border);
-            padding: 40px 0;
+            padding: 40px 0 100px;
             text-align: center;
-            color: var(--text-dim);
-            font-size: 14px;
+            font-size: 13px;
+            color: #aaa;
+            border-top: 1px solid #ddd8d0;
         }
 
-        footer a { color: var(--text-dim); }
+        footer a { color: #aaa; }
 
-        /* Mobile */
         @media (max-width: 600px) {
-            .hero { padding: 60px 0 40px; }
-            section { padding: 50px 0; }
-            .pricing-grid { grid-template-columns: 1fr; }
-            .cta-form { padding: 24px; }
+            .hero { padding: 50px 0 36px; }
+            .stats { gap: 24px; }
+            .stats .number { font-size: 28px; }
+            .pricing-compare { grid-template-columns: 1fr; }
+            .form-block { padding: 28px; }
         }
     </style>
 </head>
 <body>
 
-<!-- Deadline banner -->
-<div class="deadline-banner">
-    <div class="date">Final payout deadline: <strong>October 31, 2026</strong></div>
-    <div class="note">Extended three times. No fourth extension expected. After this date, unclaimed funds are gone.</div>
+<div class="deadline-top">
+    Final deadline: <strong>October 31, 2026</strong> — after this, unclaimed rights are permanently discharged and funds go to other creditors
 </div>
 
-<!-- Hero -->
 <div class="container">
-    <div class="hero">
-        <h1>Mt. Gox claim stuck?<br>We can help.</h1>
-        <p class="subtitle">$4 billion in Bitcoin is still waiting to be paid out. Over 1,000 creditors are stuck — broken forms, address errors, unresponsive support. We've navigated the system and know what works.</p>
-        <p class="track-record">Claims resolved to date: <span>$300,000+</span></p>
 
-        <div class="cta-form" id="form-container">
-            <h3>Free claim assessment</h3>
-            <p class="form-sub">We'll check your claim and estimate its value. No cost, no obligation.</p>
-            <form action="https://formspree.io/f/mlgorzjp" method="POST" id="contact-form">
-                <input type="email" name="email" placeholder="Your email" required>
-                <input type="text" name="creditor" placeholder="Creditor number, username, or email (whatever you remember)">
-                <textarea name="message" placeholder="Briefly describe your situation (optional)"></textarea>
-                <button type="submit">Get free assessment</button>
-            </form>
-            <p class="form-fine">We respond within 24 hours. Your information is kept confidential.</p>
+    <div class="hero">
+        <h1>Mt.&nbsp;Gox claim stuck?<br>We can help.</h1>
+        <p>Billions in Bitcoin are still unclaimed. If you had funds on Mt.&nbsp;Gox, you likely have money waiting — but the system won't make it easy.</p>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="number green">84.73 BTC</div>
+            <div class="label">In active recovery</div>
         </div>
-        <div class="form-success" id="form-success">
-            <h3>Received!</h3>
-            <p>We'll review your claim and get back to you within 24 hours.</p>
+        <div class="stat">
+            <div class="number">15%</div>
+            <div class="label">Our fee</div>
+        </div>
+        <div class="stat">
+            <div class="number">$0</div>
+            <div class="label">Upfront cost</div>
         </div>
     </div>
-</div>
 
-<!-- Problem -->
-<section>
-    <div class="container">
-        <h2>The claims system is designed to make you give up</h2>
-        <p>The Mt. Gox Online Rehabilitation Claim Filing System is one of the worst user experiences ever built. Most creditors who are still waiting aren't waiting by choice — they're stuck.</p>
-        <ul class="problem-list">
-            <li><span>x</span> Address changes return generic errors with no explanation</li>
-            <li><span>x</span> Forms fail silently — you think you submitted, but nothing happened</li>
-            <li><span>x</span> Support responds in weeks, if at all</li>
-            <li><span>x</span> Documentation is walls of Japanese legalese with shifting deadlines</li>
-            <li><span>x</span> The system regularly goes down during peak hours</li>
+    <ul class="situations">
+        <li>Don't know if you have a claim</li>
+        <li>Never filed — not sure if it's too late</li>
+        <li>Can't log in</li>
+        <li>Address change blocked</li>
+        <li>Don't know where to start</li>
+    </ul>
+
+    <div class="risk-free">
+        <h3>Nothing to lose</h3>
+        <ul>
+            <li>Free assessment — we check if you have a valid claim</li>
+            <li>No upfront payment, no retainer, no hourly billing</li>
+            <li>We only get paid when you get paid</li>
+            <li>Trustee pays you directly — we never touch your funds</li>
+            <li>Can't resolve it? You owe nothing</li>
         </ul>
     </div>
-</section>
 
-<!-- How it works -->
-<section>
-    <div class="container">
+    <div class="testimonial">
+        <p>I'd been stuck for months — address change kept failing, support didn't respond, and the deadline was getting closer. These guys figured out the issue in two days and walked me through every step.</p>
+        <div class="attribution">— J.B., European creditor, 2026</div>
+    </div>
+
+    <div class="trust-block">
+        <h2>Who we are</h2>
+        <p>We're not a law firm and we don't provide legal advice. We're a small European team who went through the Mt.&nbsp;Gox claims process ourselves — same broken system, same frustration.</p>
+        <p>We know what works because we've done it. Background in finance, tech, and business administration. We're upfront about what we can and can't help with.</p>
+    </div>
+
+    <div class="form-block" id="form-container">
+        <h2>Free claim assessment</h2>
+        <p class="sub">Send us whatever you have — even just an old email address. We'll check if you have a valid claim and estimate its value.</p>
+        <form action="https://formspree.io/f/mlgorzjp" method="POST" id="contact-form">
+            <input type="email" name="email" placeholder="Your email" required>
+            <input type="text" name="creditor" placeholder="Creditor number, username, or old email (if you have it)">
+            <textarea name="message" placeholder="Briefly describe your situation (optional)"></textarea>
+            <button type="submit">Get free assessment</button>
+        </form>
+        <p class="fine">We respond within 24 hours. Your information is kept strictly confidential.</p>
+    </div>
+
+    <section>
+        <div class="section-label">The problem</div>
+        <h2>The system is built to make you give up</h2>
+        <ul class="problems">
+            <li>Address changes return generic errors</li>
+            <li>Forms fail silently — you think you submitted, but nothing happened</li>
+            <li>Support responds in weeks, if at all</li>
+            <li>Critical updates are buried in dense legal filings</li>
+        </ul>
+    </section>
+
+    <section>
+        <div class="section-label">Process</div>
         <h2>How it works</h2>
-        <p>Three steps. We handle the hard parts.</p>
         <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Free assessment</h3>
-                <p>Send us your creditor number — or just your old Mt. Gox username, email, or whatever you remember. We check if you have a valid claim and estimate its current value.</p>
+            <div class="step-card">
+                <div class="step-head"><div class="step-n">1</div><h3>Free assessment</h3></div>
+                <p>Send us whatever you remember — creditor number, old email, username. We check your claim and estimate its value.</p>
             </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>We guide you through it</h3>
-                <p>We navigate the system on your behalf: address updates, bank registration, trustee communication. Some steps require your direct participation (identity verification, signing documents). We'll tell you exactly what's needed and when.</p>
+            <div class="step-card">
+                <div class="step-head"><div class="step-n">2</div><h3>We handle the process — you stay in control</h3></div>
+                <p>We navigate the system and deal with support on your behalf. Some steps need your direct participation — ID verification, signing documents. We tell you exactly what and when.</p>
             </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>You get paid</h3>
-                <p>The trustee releases funds directly to your bank account. We invoice our fee after you've been paid. If we can't resolve your claim, you owe nothing.</p>
+            <div class="step-card">
+                <div class="step-head"><div class="step-n">3</div><h3>You get paid</h3></div>
+                <p>Trustee pays you directly. We invoice 15% after your money arrives. Can't resolve it? You owe nothing.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Pricing -->
-<section>
-    <div class="container">
-        <h2>Transparent pricing</h2>
-        <p>No upfront costs. No hourly billing. No retainers. We get paid when you get paid.</p>
-        <div class="pricing-grid">
-            <div class="pricing-card highlight">
-                <div class="label">Us</div>
-                <div class="fee">15%</div>
-                <div class="fee-note">of what you receive</div>
-                <div class="example">
-                    On a $250k claim, you keep
-                    <strong>$212,500</strong>
-                </div>
+    <section>
+        <div class="section-label">Pricing</div>
+        <h2>We get paid when you get paid</h2>
+        <p>No upfront costs. No hourly billing. No retainers.</p>
+        <div class="pricing-compare">
+            <div class="price-box us">
+                <div class="tag">Us</div>
+                <div class="amount">15%</div>
+                <div class="note">of what you receive</div>
+                <div class="keep">On a $250k claim<strong>$212,500</strong></div>
             </div>
-            <div class="pricing-card">
-                <div class="label">Law firms</div>
-                <div class="fee">50–75%</div>
-                <div class="fee-note">+ upfront retainer</div>
-                <div class="example">
-                    On a $250k claim, you keep
-                    <strong>$62,500–$125,000</strong>
-                </div>
+            <div class="price-box them">
+                <div class="tag">Law firms</div>
+                <div class="amount">50–75%</div>
+                <div class="note">+ upfront retainer</div>
+                <div class="keep">On a $250k claim<strong>$62k–$125k</strong></div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Who -->
-<section class="who">
-    <div class="container">
-        <h2>People who've actually done this</h2>
-        <p>We're not a law firm and we don't provide legal advice. We're a small team based in Europe who have recently gone through the Mt. Gox claims process ourselves — dealing with the same broken system, the same unresponsive support, the same cryptic error messages.</p>
-        <p>Our background is in finance, technology, and business administration. We know what works because we've done it. We work with a limited number of clients at a time, and we're upfront about what we can and can't help with.</p>
-    </div>
-</section>
-
-<!-- FAQ -->
-<section>
-    <div class="container">
+    <section>
+        <div class="section-label">FAQ</div>
         <h2>Common questions</h2>
-
-        <details class="faq-item">
-            <summary>I don't know my creditor number</summary>
-            <div class="faq-answer">That's fine. Send us whatever you remember — your old Mt. Gox email, username, or approximate dates. We can work with that to locate your claim.</div>
-        </details>
-
-        <details class="faq-item">
-            <summary>I never filed a claim. Is it too late?</summary>
-            <div class="faq-answer">The filing deadline has passed, but many claims were filed automatically by the trustee (self-approved claims with Z1- or Z2- creditor numbers). You may have a valid claim without knowing it.</div>
-        </details>
-
-        <details class="faq-item">
-            <summary>My claim was rejected</summary>
-            <div class="faq-answer">Rejected creditors have been given second chances to appeal. Depending on your situation, there may still be options. We assess every case individually.</div>
-        </details>
-
-        <details class="faq-item">
-            <summary>I lost my login credentials</summary>
-            <div class="faq-answer">There's an offline credential recovery process. It's slow and bureaucratic, but it works. We've done it.</div>
-        </details>
-
-        <details class="faq-item">
-            <summary>How do I know I can trust you?</summary>
-            <div class="faq-answer">The trustee pays you directly — we never touch your funds. We invoice our 15% after your money has arrived. Before you commit, we'll walk you through exactly what we do, what access we need, and what you'll need to do yourself. No surprises.</div>
-        </details>
-
-        <details class="faq-item">
-            <summary>What about taxes?</summary>
-            <div class="faq-answer">Mt. Gox payouts have tax implications that vary by country. We can point you to qualified tax advisors, but we don't provide tax advice ourselves.</div>
-        </details>
-
-        <details class="faq-item">
-            <summary>What do you need from me?</summary>
-            <div class="faq-answer">At minimum: your email and whatever identifying information you have (creditor number, old username, email used on Mt. Gox). For the actual recovery process, you'll need to provide identity documents and sign authorization forms. We'll walk you through each step.</div>
-        </details>
-    </div>
-</section>
-
-<!-- Bottom CTA -->
-<div class="bottom-cta">
-    <div class="container">
-        <h2>Don't leave your money in a dead exchange</h2>
-        <p>Send us your details. Free assessment, no obligation.</p>
-        <a href="#form-container" class="btn">Get free assessment</a>
-    </div>
+        <details><summary>I don't know my creditor number</summary><div class="faq-a">That's fine. Send us whatever you remember — old email, username, approximate dates. We can work with that.</div></details>
+        <details><summary>I never filed a claim. Is it too late?</summary><div class="faq-a">Many claims were filed automatically by the trustee (Z1-/Z2- numbers). You may have a valid claim without knowing it.</div></details>
+        <details><summary>My claim was rejected</summary><div class="faq-a">Rejected creditors have been given second chances. We assess every case individually.</div></details>
+        <details><summary>How do I know I can trust you?</summary><div class="faq-a">The trustee pays you directly — we never handle your funds. We invoice 15% after your money has arrived. We walk you through everything before you commit to anything.</div></details>
+        <details><summary>What do you need from me?</summary><div class="faq-a">Your email and whatever identifying info you have. For the actual recovery: identity documents and authorization forms. We guide you through each step.</div></details>
+        <details><summary>What happens if the deadline passes?</summary><div class="faq-a">Under the rehabilitation plan, unclaimed creditors' rights are permanently discharged after the deadline. The unclaimed funds are redistributed to creditors who completed the process. There have been three extensions — a fourth is not expected.</div></details>
+    </section>
 </div>
 
-<!-- Footer -->
 <footer>
-    <div class="container">
-        <p>Mt. Gox Recovery &middot; Palma, Spain &middot; <a href="mailto:info@menok.se">info@menok.se</a></p>
-    </div>
+    <div class="container">Mt.&nbsp;Gox Recovery &middot; Palma, Spain &middot; <a href="mailto:info@menok.se">info@menok.se</a></div>
 </footer>
 
+<div class="sticky-cta">
+    <a href="#form-container">Get free assessment</a>
+</div>
+
 <script>
-    document.querySelector('.btn')?.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('form-container').scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => document.querySelector('.cta-form input')?.focus(), 500);
-    });
-
-    document.getElementById('contact-form')?.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const form = e.target;
-        const btn = form.querySelector('button');
-        btn.textContent = 'Sending...';
-        btn.disabled = true;
-
-        try {
-            const resp = await fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            });
-            if (resp.ok) {
-                form.style.display = 'none';
-                document.getElementById('form-container').querySelector('.form-sub').style.display = 'none';
-                document.getElementById('form-container').querySelector('h3').style.display = 'none';
-                document.getElementById('form-container').querySelector('.form-fine').style.display = 'none';
-                document.getElementById('form-success').style.display = 'block';
-            } else {
-                btn.textContent = 'Something went wrong — try emailing us';
-                btn.disabled = false;
-            }
-        } catch {
-            btn.textContent = 'Something went wrong — try emailing us';
-            btn.disabled = false;
-        }
-    });
+document.querySelector('.sticky-cta a')?.addEventListener('click',function(e){e.preventDefault();document.getElementById('form-container').scrollIntoView({behavior:'smooth'})});
 </script>
-
 </body>
 </html>
